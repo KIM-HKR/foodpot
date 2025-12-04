@@ -90,6 +90,7 @@ https://ai.google.dev/gemini-api/docs
 
 ### 📷 동작 영상
 
-여기에 영상 삽입
+https://github.com/user-attachments/assets/f774312b-b4a6-4840-ba8a-a223b16970bc
+
 
 앱의 실행 영상입니다.  
