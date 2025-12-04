@@ -1,97 +1,96 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 푸드팟
+---
+내 주변 음식점 찾기 어플입니다.
+### 📖 프로젝트 소개
+AI 에이전트를 사용해서 음식점 검색 어플을 제작했습니다.
 
-# Getting Started
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+***
+### ⚙️ 개발 환경
+window
+### 🔨 개발 도구
+**tools:** Cursor
 
-## Step 1: Start Metro
+**programming language:** React Native
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+**AI agent:** Gemini, Cursor 내장 ai
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+**초기 식당 정보:** JSON
 
-```sh
-# Using npm
-npm start
+**Open API:** 
 
-# OR using Yarn
-yarn start
-```
+### Google Maps Platform
 
-## Step 2: Build and run your app
+- Maps SDK for Android
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+- Places API
 
-### Android
+- Directions API
 
-```sh
-# Using npm
-npm run android
+### Google AI Studio
 
-# OR using Yarn
-yarn android
-```
+- Gemini API
 
-### iOS
+https://developers.google.com/maps/documentation
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+https://developers.google.com/maps/documentation/places/web-service/search-nearby
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+https://developers.google.com/maps/documentation/directions/overview
 
-```sh
-bundle install
-```
+https://ai.google.dev/gemini-api/docs
 
-Then, and every time you update your native dependencies, run:
+***
+### 기능 소개
 
-```sh
-bundle exec pod install
-```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
++ **메인 화면:** 음식점 위치 나열
 
-```sh
-# Using npm
-npm run ios
+  <img  src="https://github.com/user-attachments/assets/bee10fa3-348e-4afe-bd5d-9aab897f0170" width="200">
 
-# OR using Yarn
-yarn ios
-```
+  앱을 실행 시키면 나오는 화면입니다. open ai를 통해 구글 맵과 음식점의 정보, GPS를 사용한 나의 위치를 불러왔습니다.
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+  이곳에서 나의 현재 위치와 상단의 음식점 카테고리, 하단의 목록, 룰렛, AI 등
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+  다양한 기능을 사용 할 수 있습니다.
 
-## Step 3: Modify your app
++ **카테고리 사용**
 
-Now that you have successfully run the app, let's make changes!
+  <img src="https://github.com/user-attachments/assets/abfa4288-bd26-4e35-bfce-3b44357174f1" width="200"> <img src="https://github.com/user-attachments/assets/062b9f78-f598-481e-b5ba-a7071aeb3e0b" width="200">
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+  카테고리 기능 활용입니다. 상단의 한식, 중식, 일식, 치킨 등의 카테고리를 클릭하면
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+  카테고리에 맞는 음식점이 지도위에 표시됩니다. 각 카테고리에 알맞는 이모지로 표시됩니다.
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+  이모지를 클릭하면 그 음식점의 정보와 별점을 확인 할 수 있습니다.
 
-## Congratulations! :tada:
++ **리스트로 보기**
 
-You've successfully run and modified your React Native App. :partying_face:
+  <img  src="https://github.com/user-attachments/assets/b6cabbf8-9e2a-43c6-a733-9678f0a6e03a" width="200">
 
-### Now what?
+  하단의 목록 버튼을 클릭 시 지도와 마커로 표시되던 음식점들이 간단한 리스트로 거리가 가가운 순으로 출력됩니다.
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+  지도 버튼을 눌러 다시 지도형으로 변경이 가능합니다.
+  
++ **랜덤 추천**
 
-# Troubleshooting
+  <img src="https://github.com/user-attachments/assets/3c43e41c-0235-440f-8688-5cb62b9d6202" width="200"> <img src="https://github.com/user-attachments/assets/e6671def-3ff1-4db4-b9e7-87d8c30e7022" width="200">
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+ 하단 중앙의 룰렛 버튼을 클릭 시 검색된 음식점 안에서 근처 음식점 중 무작위로 한 가지를 출력합니다.
 
-# Learn More
+ 여기 갈래요! 버튼을 누르면 해당 음식점이 중앙으로 오도록 부드럽게 포커싱합니다.
 
-To learn more about React Native, take a look at the following resources:
+ + **AI 맛집 비서**
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+  <img src="https://github.com/user-attachments/assets/efb278d9-65ac-4de2-a399-2be4eabc8b53" width="200">
+
+  Gemini OpenAI를 통해 구현했습니다.
+
+ 하단 우측의 AI 버튼을 클릭 시 ai 채팅방으로 넘어갑니다. 여기서 ai에게 질문을 해 음식점 추천을 받을 수 있습니다.
+***
+
+### 📷 동작 영상
+
+https://github.com/user-attachments/assets/f774312b-b4a6-4840-ba8a-a223b16970bc
+
+
+앱의 실행 영상입니다.  
